@@ -732,22 +732,156 @@ a:focus {
 }
 
 
+/* ============================================================
+   Teaser Banner Image
+============================================================ */
+.teaser-banner {
+  margin: 0 auto;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.teaser-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   Sensor Data 2x2 Grid
+============================================================ */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sensor-card {
+  text-align: center;
+}
+
+.sensor-title {
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.sensor-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  background: var(--background-primary);
+}
+
+.sensor-image:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.sensor-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  background: var(--background-secondary);
+}
+
+/* ============================================================
+   Demo Video Row (side-by-side)
+============================================================ */
+.video-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.video-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.video-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.video-card {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  background: var(--background-primary);
+}
+
+.video-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.video-card video {
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+/* ============================================================
+   GitHub icon link in author area
+============================================================ */
+.publication-authors .icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.publication-authors .icon-link:hover {
+  color: var(--primary-color);
+}
+
+/* Mobile: single column for grid and videos */
+@media screen and (max-width: 768px) {
+  .sensor-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .video-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .teaser-banner img {
+    width: 100%;
+  }
+}
+
 /* Print styles */
 @media print {
   .more-works-container {
     display: none;
   }
-  
+
   .hero, .section {
     animation: none;
   }
-  
+
   .button {
     background: transparent !important;
     color: var(--text-primary) !important;
     box-shadow: none !important;
   }
 }
-
-
-
